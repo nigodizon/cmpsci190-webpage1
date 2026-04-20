@@ -1,5 +1,5 @@
 var thename = "Isaiah Dizon";
-var info2 = "cs190 Javascript Lab 2";
+var info2 = "cs190 JavaScript Lab 2";
 var id2 = "865";
 
 function displayinfo375() {
