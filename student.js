@@ -65,7 +65,7 @@ function displaytype714() {
   }
 }
 
-function getName3590() {
+function getName359() {
   var thename;
   var message;
 
@@ -90,7 +90,7 @@ function getName3590() {
   document.getElementById("name359").innerHTML = message;
 }
 
-function getAge2590() {
+function getAge259() {
   var theage;
   var message;
 
