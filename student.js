@@ -114,3 +114,43 @@ function getAge259() {
 
   document.getElementById("age259").innerHTML = message;
 }
+
+function getBreaks806() {
+  var num;
+  var count;
+  var output;
+
+  do {
+    num = prompt("Enter a number from 1 to 5");
+  } while (num < 1 || num > 5);
+
+  output = "";
+  count = 0;
+
+  while (count < num) {
+    output = output + "<br>";
+    count = count + 1;
+  }
+
+  document.getElementById("breaks806").innerHTML = output;
+}
+
+function getCards974() {
+  var num;
+  var count;
+  var output;
+
+  do {
+    num = prompt("Enter a number from 2 to 7");
+  } while (num < 2 || num > 7);
+
+  output = "";
+  count = 0;
+
+  while (count < num) {
+    output = output + "Card #" + count + " ";
+    count = count + 1;
+  }
+
+  document.getElementById("cards974").innerHTML = output;
+}
