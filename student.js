@@ -1,5 +1,5 @@
 var thename = "Isaiah Dizon";
-var info2 = "cs190 JavaScript Lab 2";
+var info2 = "cs190 Javascript Lab 2";
 var id2 = "865";
 var special = 1;
 var thetype = "direct";
@@ -18,7 +18,7 @@ function displayspecial617() {
   }
 
   if (special == 2) {
-    alert("The current speical is #2");
+    alert("The current special is #2");
   }
 
   if (special == 3) {
@@ -63,4 +63,54 @@ function displaytype714() {
   if (thetype == "subscription") {
     alert("Renew your subscription today! My children need medicine!");
   }
+}
+
+function getName3590() {
+  var thename;
+  var message;
+
+  thename = prompt("Enter your name");
+
+  message = "Your Name Is: " + thename + " ";
+
+  if (thename.length < 5) {
+    message = message + "You have a short name";
+  }
+
+  if (thename.length >= 5) {
+    if (thename.length <= 10) {
+      message = message + "You have a medium name";
+    }
+  }
+
+  if (thename.length > 10) {
+    message = message + "You have a long name";
+  }
+
+  document.getElementById("name359").innerHTML = message;
+}
+
+function getAge2590() {
+  var theage;
+  var message;
+
+  theage = prompt("Enter your age");
+
+  message = "Your Age Is: " + theage + " ";
+
+  if (theage < 18) {
+    message = message + "You are a kid";
+  }
+
+  if (theage >= 18) {
+    if (theage <= 50) {
+      message = message + "You are an adult";
+    }
+  }
+
+  if (theage > 50) {
+    message = message + "You are a senior citizen";
+  }
+
+  document.getElementById("age259").innerHTML = message;
 }
