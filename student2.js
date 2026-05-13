@@ -2,6 +2,22 @@ companyname4 = "Dizon Books";
 address4 = "962 Main St. Valencia, CA 91344";
 phonenumber5 = "(555) 638-1234";
 
+var product1 = {
+  name: "HP 4426",
+  id: "4426",
+  desc: "Newest and Best Laptop from HP Computer",
+};
+var product2 = {
+  name: "Apple 88123 iPad",
+  id: "88123",
+  desc: "Apple Tablet Computer",
+};
+var product3 = {
+  name: "Dell Dimension 2400",
+  id: "2400X",
+  desc: "A fast 2.4 ghz computer",
+};
+
 function getHeader() {
   var output;
   var now;
@@ -46,31 +62,35 @@ function getFooter(companyname, address, phonenumber) {
   return output;
 }
 
-function makeMenu2(size) {
+function makeMenu2() {
   var output;
-  var count;
 
-  output = "My Menu: ";
-  count = 0;
-
-  while (count < size) {
-    output = output + "Button ";
-    count = count + 1;
-  }
+  output = "";
+  output = output + "Menu: ";
+  output =
+    output + "<button onclick='execButton382(product1)'>Product #1</button> ";
+  output =
+    output + "<button onclick='execButton382(product2)'>Product #2</button> ";
+  output =
+    output + "<button onclick='execButton382(product3)'>Product #3</button>";
 
   return output;
 }
 
-function makeMain9() {
+function makeMain9(myproduct) {
   var output;
 
   output = "";
-  output = output + "My Product:<br>";
-  output = output + "Product Name: <br>";
-  output = output + "Product ID: <br>";
-  output = output + "Product Description: <br>";
+  output = output + "My Product:<br><br>";
+  output = output + "Product Name: " + myproduct.name + "<br>";
+  output = output + "Product ID: " + myproduct.id + "<br>";
+  output = output + "Product Description: " + myproduct.desc + "<br>";
   output = output + "Shopping Cart Link Bar <br>";
   output = output + "Product Image: <br>";
 
   return output;
+}
+
+function execButton382(myproduct) {
+  document.getElementById("main895").innerHTML = makeMain9(myproduct);
 }

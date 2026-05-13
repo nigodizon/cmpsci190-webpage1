@@ -15,16 +15,25 @@
   <body>
     <div id="head962"></div>
 
+    <hr />
+
     <div id="menu516">Menu</div>
 
+    <hr />
+
     <div id="main895">Main Web Page</div>
+
+    <hr />
 
     <div id="foot638"></div>
 
     <script>
       document.getElementById("head962").innerHTML = getHeader();
-      document.getElementById("menu516").innerHTML = makeMenu2(3);
-      document.getElementById("main895").innerHTML = makeMain9();
+
+      document.getElementById("menu516").innerHTML = makeMenu2();
+
+      document.getElementById("main895").innerHTML = makeMain9(product1);
+
       document.getElementById("foot638").innerHTML = getFooter(
         companyname4,
         address4,
