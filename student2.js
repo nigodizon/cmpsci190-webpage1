@@ -1,6 +1,8 @@
 companyname4 = "Dizon Books";
 address4 = "962 Main St. Valencia, CA 91344";
 phonenumber5 = "(555) 638-1234";
+imgurl739 = "https://www.college1.com/images/";
+cardimgurl550 = "https://www.college1.com/images/cards/gbCard";
 
 var product1 = {
   name: "HP 4426",
@@ -72,13 +74,17 @@ function makeMenu2() {
   output =
     output + "<button onclick='execButton382(product2)'>Product #2</button> ";
   output =
-    output + "<button onclick='execButton382(product3)'>Product #3</button>";
+    output + "<button onclick='execButton382(product3)'>Product #3</button> ";
+  output = output + "<button onclick='dealCards649()'>Deal Cards</button>";
 
   return output;
 }
 
 function makeMain9(myproduct) {
   var output;
+  var produrl;
+
+  produrl = imgurl739 + myproduct.id + ".gif";
 
   output = "";
   output = output + "My Product:<br><br>";
@@ -87,10 +93,36 @@ function makeMain9(myproduct) {
   output = output + "Product Description: " + myproduct.desc + "<br>";
   output = output + "Shopping Cart Link Bar <br>";
   output = output + "Product Image: <br>";
+  output = output + "<img src='" + produrl + "' alt='" + myproduct.name + "'>";
 
   return output;
 }
 
 function execButton382(myproduct) {
   document.getElementById("main895").innerHTML = makeMain9(myproduct);
+}
+
+function dealCards649() {
+  var output;
+  var cardurl;
+
+  output = "";
+  output = output + "Black Jack Game:<br><br>";
+
+  cardurl = cardimgurl550 + "0.gif";
+  output = output + "<img id='card0' src='" + cardurl + "'> ";
+
+  cardurl = cardimgurl550 + "1.gif";
+  output = output + "<img id='card1' src='" + cardurl + "'> ";
+
+  cardurl = cardimgurl550 + "52.gif";
+  output = output + "<img id='card2' src='" + cardurl + "'> ";
+
+  cardurl = cardimgurl550 + "52.gif";
+  output = output + "<img id='card3' src='" + cardurl + "'> ";
+
+  cardurl = cardimgurl550 + "52.gif";
+  output = output + "<img id='card4' src='" + cardurl + "'> ";
+
+  document.getElementById("main895").innerHTML = output;
 }
