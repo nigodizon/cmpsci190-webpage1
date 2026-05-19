@@ -1,8 +1,10 @@
 companyname4 = "Dizon Books";
 address4 = "962 Main St. Valencia, CA 91344";
 phonenumber5 = "(555) 638-1234";
+
 imgurl739 = "https://www.college1.com/images/";
 cardimgurl550 = "https://www.college1.com/images/cards/gbCard";
+cardnum580 = -1;
 
 var product1 = {
   name: "HP 4426",
@@ -75,7 +77,8 @@ function makeMenu2() {
     output + "<button onclick='execButton382(product2)'>Product #2</button> ";
   output =
     output + "<button onclick='execButton382(product3)'>Product #3</button> ";
-  output = output + "<button onclick='dealCards649()'>Deal Cards</button>";
+  output = output + "<button onclick='dealCards649()'>Deal Cards</button> ";
+  output = output + "<button onclick='hitCard896()'>Hit Card</button>";
 
   return output;
 }
@@ -99,12 +102,15 @@ function makeMain9(myproduct) {
 }
 
 function execButton382(myproduct) {
+  cardnum580 = -1;
   document.getElementById("main895").innerHTML = makeMain9(myproduct);
 }
 
 function dealCards649() {
   var output;
   var cardurl;
+
+  cardnum580 = 2;
 
   output = "";
   output = output + "Black Jack Game:<br><br>";
@@ -125,4 +131,26 @@ function dealCards649() {
   output = output + "<img id='card4' src='" + cardurl + "'> ";
 
   document.getElementById("main895").innerHTML = output;
+}
+
+function hitCard896() {
+  var cardurl;
+  var cardid;
+
+  if (cardnum580 == -1) {
+    alert("Deal cards first");
+    return;
+  }
+
+  if (cardnum580 > 4) {
+    alert("No more cards");
+    return;
+  }
+
+  cardurl = cardimgurl550 + cardnum580 + ".gif";
+  cardid = "card" + cardnum580;
+
+  document.getElementById(cardid).src = cardurl;
+
+  cardnum580 = cardnum580 + 1;
 }
