@@ -7,19 +7,19 @@ cardimgurl550 = "https://www.college1.com/images/cards/gbCard";
 cardnum580 = -1;
 
 var product1 = {
-  name: "HP 4426",
+  name: "The Great Gatsby",
   id: "4426",
-  desc: "Newest and Best Laptop from HP Computer",
+  desc: "A classic American novel by F. Scott Fitzgerald",
 };
 var product2 = {
-  name: "Apple 88123 iPad",
+  name: "To Kill a Mockingbird",
   id: "88123",
-  desc: "Apple Tablet Computer",
+  desc: "A powerful novel about justice, childhood, and morality",
 };
 var product3 = {
-  name: "Dell Dimension 2400",
+  name: "1984",
   id: "2400X",
-  desc: "A fast 2.4 ghz computer",
+  desc: "A dystopian novel about surveillance and control",
 };
 
 function getHeader() {
@@ -83,6 +83,22 @@ function makeMenu2() {
   return output;
 }
 
+function makeLinkBar432() {
+  var output;
+
+  output = "";
+  output =
+    output +
+    "<a href='https://www.paypal.com' target='_blank'>Add To Cart</a> | ";
+  output =
+    output +
+    "<a href='https://www.paypal.com' target='_blank'>View Cart</a> | ";
+  output =
+    output + "<a href='https://www.paypal.com' target='_blank'>Checkout</a>";
+
+  return output;
+}
+
 function makeMain9(myproduct) {
   var output;
   var produrl;
@@ -90,13 +106,15 @@ function makeMain9(myproduct) {
   produrl = imgurl739 + myproduct.id + ".gif";
 
   output = "";
-  output = output + "My Product:<br><br>";
+  output = output + "<div style='padding:20px; text-align:center;'>";
+  output = output + "<h2>My Product</h2>";
   output = output + "Product Name: " + myproduct.name + "<br>";
   output = output + "Product ID: " + myproduct.id + "<br>";
-  output = output + "Product Description: " + myproduct.desc + "<br>";
-  output = output + "Shopping Cart Link Bar <br>";
+  output = output + "Product Description: " + myproduct.desc + "<br><br>";
+  output = output + makeLinkBar432() + "<br><br>";
   output = output + "Product Image: <br>";
   output = output + "<img src='" + produrl + "' alt='" + myproduct.name + "'>";
+  output = output + "</div>";
 
   return output;
 }
