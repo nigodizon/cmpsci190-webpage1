@@ -6,6 +6,9 @@ imgurl739 = "https://www.college1.com/images/";
 cardimgurl550 = "https://www.college1.com/images/cards/gbCard";
 cardnum580 = -1;
 
+adnum899 = 1;
+winobj412 = -1;
+
 var product1 = {
   name: "The Great Gatsby",
   id: "4426",
@@ -78,7 +81,9 @@ function makeMenu2() {
   output =
     output + "<button onclick='execButton382(product3)'>Product #3</button> ";
   output = output + "<button onclick='dealCards649()'>Deal Cards</button> ";
-  output = output + "<button onclick='hitCard896()'>Hit Card</button>";
+  output = output + "<button onclick='hitCard896()'>Hit Card</button> ";
+  output = output + "<button onclick='popupAd835()'>PopUp Ad</button> ";
+  output = output + "<button onclick='closeAd835()'>Close Ad</button>";
 
   return output;
 }
@@ -171,4 +176,47 @@ function hitCard896() {
   document.getElementById(cardid).src = cardurl;
 
   cardnum580 = cardnum580 + 1;
+}
+
+function popupAd835() {
+  var adhtml;
+
+  if (winobj412 != -1) {
+    winobj412.close();
+  }
+
+  if (adnum899 == 1) {
+    adhtml =
+      "<table width='500' height='80' bgcolor='lightgreen'><tr><td><a href='https://www.gutenberg.org' target='_blank'><h1 align='center'>Free Classic Books</h1></a></td></tr></table>";
+    winobj412 = window.open("", "adwindow", "width=520,height=120");
+  }
+
+  if (adnum899 == 2) {
+    adhtml =
+      "<table width='350' height='160' bgcolor='lightyellow'><tr><td><a href='https://openlibrary.org' target='_blank'><h2 align='center'>Find Your Next Book</h2></a></td></tr></table>";
+    winobj412 = window.open("", "adwindow", "width=380,height=200");
+  }
+
+  if (adnum899 == 3) {
+    adhtml =
+      "<table width='250' height='250' bgcolor='lightpink'><tr><td><a href='https://books.google.com' target='_blank'><h2 align='center'>Shop More Books Today</h2></a></td></tr></table>";
+    winobj412 = window.open("", "adwindow", "width=280,height=300");
+  }
+
+  winobj412.document.open();
+  winobj412.document.write(adhtml);
+  winobj412.document.close();
+
+  adnum899 = adnum899 + 1;
+
+  if (adnum899 > 3) {
+    adnum899 = 1;
+  }
+}
+
+function closeAd835() {
+  if (winobj412 != -1) {
+    winobj412.close();
+    winobj412 = -1;
+  }
 }
