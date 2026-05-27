@@ -83,7 +83,8 @@ function makeMenu2() {
   output = output + "<button onclick='dealCards649()'>Deal Cards</button> ";
   output = output + "<button onclick='hitCard896()'>Hit Card</button> ";
   output = output + "<button onclick='popupAd835()'>PopUp Ad</button> ";
-  output = output + "<button onclick='closeAd835()'>Close Ad</button>";
+  output = output + "<button onclick='closeAd835()'>Close Ad</button> ";
+  output = output + "<button onclick='makeForm294()'>Enter Data</button>";
 
   return output;
 }
@@ -219,4 +220,82 @@ function closeAd835() {
     winobj412.close();
     winobj412 = -1;
   }
+}
+
+function makeForm294() {
+  var output;
+
+  output = "";
+  output =
+    output +
+    "<form onsubmit='return checkForm453()' name='customerform' action='https://www.college1.com/classes/javascript/survey.php' method='post'>";
+  output =
+    output +
+    "<input type='hidden' name='send_email' value='iizdon@my.canyons.edu'>";
+  output = output + "<table width='100%' border='1'>";
+  output =
+    output + "<tr><td>First Name: <input type='text' name='firstname'></td>";
+  output =
+    output +
+    "<td align='right'>Last Name: <input type='text' name='lastname'></td></tr>";
+  output =
+    output +
+    "<tr><td colspan='2'>Address: <input type='text' name='address' size='50'></td></tr>";
+  output = output + "<tr><td>City: <input type='text' name='city'></td>";
+  output =
+    output +
+    "<td align='right'>State: <input type='text' name='state' size='3'> ";
+  output = output + "Zip: <input type='text' name='zip' size='6'></td></tr>";
+  output =
+    output +
+    "<tr><td colspan='2'>Email Address: <input type='text' name='emailaddr' size='50'></td></tr>";
+  output = output + "<tr><td><input type='submit' value='Submit'></td>";
+  output = output + "<td align='right'><input type='reset'></td></tr>";
+  output = output + "</table>";
+  output = output + "</form>";
+
+  document.getElementById("main895").innerHTML = output;
+}
+
+function checkForm453() {
+  var message;
+  var form;
+
+  message = "";
+  form = document.customerform;
+
+  if (form.firstname.value == "") {
+    message = message + "First Name is missing ";
+  }
+
+  if (form.lastname.value == "") {
+    message = message + "Last Name is missing ";
+  }
+
+  if (form.address.value == "") {
+    message = message + "Address is missing ";
+  }
+
+  if (form.city.value == "") {
+    message = message + "City is missing ";
+  }
+
+  if (form.state.value == "") {
+    message = message + "State is missing ";
+  }
+
+  if (form.zip.value == "") {
+    message = message + "Zip is missing ";
+  }
+
+  if (form.emailaddr.value == "") {
+    message = message + "Email Address is missing ";
+  }
+
+  if (message != "") {
+    alert(message);
+    return false;
+  }
+
+  return true;
 }
