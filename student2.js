@@ -9,6 +9,12 @@ cardnum580 = -1;
 adnum899 = 1;
 winobj412 = -1;
 
+product4 = {};
+product5 = {};
+
+jsonobj4 = { type: "books", number: "1" };
+jsonobj5 = { type: "books", number: "2" };
+
 var product1 = {
   name: "The Great Gatsby",
   id: "4426",
@@ -80,6 +86,10 @@ function makeMenu2() {
     output + "<button onclick='execButton382(product2)'>Product #2</button> ";
   output =
     output + "<button onclick='execButton382(product3)'>Product #3</button> ";
+  output =
+    output + "<button onclick='execButton382(product4)'>Product #4</button> ";
+  output =
+    output + "<button onclick='execButton382(product5)'>Product #5</button> ";
   output = output + "<button onclick='dealCards649()'>Deal Cards</button> ";
   output = output + "<button onclick='hitCard896()'>Hit Card</button> ";
   output = output + "<button onclick='popupAd835()'>PopUp Ad</button> ";
@@ -298,4 +308,27 @@ function checkForm453() {
   }
 
   return true;
+}
+
+function getProduct902(jsonobj) {
+  var server;
+  var jsonstr;
+  var s;
+
+  server = "https://college1.com/classes/cs190/getproduct2.php";
+  jsonstr = JSON.stringify(jsonobj);
+
+  s = document.createElement("script");
+  s.src = server + "?jsonstr=" + jsonstr;
+  document.body.appendChild(s);
+}
+
+function myFunc(myObj) {
+  if (product4 == null) {
+    product4 = myObj;
+  } else if (product5 == null) {
+    product5 = myObj;
+  } else {
+    console.log("Error, no object variable available");
+  }
 }
